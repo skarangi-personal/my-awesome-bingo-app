@@ -4,15 +4,17 @@ interface BingoModalProps {
 
 export function BingoModal({ onDismiss }: BingoModalProps) {
   return (
-    <div className="fixed inset-0 bg-black/50 flex items-center justify-center p-4 z-50">
-      <div className="bg-white rounded-xl p-6 max-w-xs w-full text-center shadow-xl animate-[bounce_0.5s_ease-out]">
-        <div className="text-5xl mb-4">🎉</div>
-        <h2 className="text-3xl font-bold text-amber-500 mb-2">BINGO!</h2>
-        <p className="text-gray-600 mb-6">You completed a line!</p>
+    <div className="fixed inset-0 bg-black/40 flex items-center justify-center p-4 z-50">
+      <div className="bg-cream rounded-2xl p-8 max-w-xs w-full text-center shadow-2xl animate-[bounce_0.5s_ease-out] border-2 border-rust">
+        <div className="text-6xl mb-4">☕</div>
+        <h2 className="text-4xl font-bold text-rust mb-2" style={{ fontFamily: 'Georgia, serif' }}>
+          BINGO!
+        </h2>
+        <p className="text-brown mb-8 text-lg">You completed a line! Wonderful!</p>
         
         <button
           onClick={onDismiss}
-          className="w-full bg-accent text-white font-semibold py-3 px-6 rounded-lg active:bg-accent-light transition-colors"
+          className="w-full bg-accent text-white font-semibold py-3 px-6 rounded-xl active:bg-accent-light transition-colors shadow-md hover:shadow-lg"
         >
           Keep Playing
         </button>

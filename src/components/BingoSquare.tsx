@@ -8,13 +8,13 @@ interface BingoSquareProps {
 
 export function BingoSquare({ square, isWinning, onClick }: BingoSquareProps) {
   const baseClasses =
-    'relative flex items-center justify-center p-1 text-center border border-gray-300 rounded transition-all duration-150 select-none min-h-[60px] text-xs leading-tight';
+    'relative flex items-center justify-center p-2 text-center border-2 rounded-xl transition-all duration-150 select-none min-h-[70px] text-xs leading-tight shadow-sm';
 
   const stateClasses = square.isMarked
     ? isWinning
-      ? 'bg-amber-200 border-amber-400 text-amber-900'
-      : 'bg-marked border-marked-border text-green-800'
-    : 'bg-white text-gray-700 active:bg-gray-100';
+      ? 'bg-rust bg-opacity-20 border-rust text-rust'
+      : 'bg-sage bg-opacity-30 border-sage text-brown'
+    : 'bg-white text-brown border-accent active:bg-cream';
 
   const freeSpaceClasses = square.isFreeSpace ? 'font-bold text-sm' : '';
 
@@ -28,7 +28,7 @@ export function BingoSquare({ square, isWinning, onClick }: BingoSquareProps) {
     >
       <span className="wrap-break-word hyphens-auto">{square.text}</span>
       {square.isMarked && !square.isFreeSpace && (
-        <span className="absolute top-0.5 right-0.5 text-green-600 text-xs">✓</span>
+        <span className="absolute top-1 right-1 text-sage text-sm font-bold">✓</span>
       )}
     </button>
   );
